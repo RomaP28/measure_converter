@@ -23,13 +23,13 @@ document.body.addEventListener('click', () => {
   wrap.classList.remove('moveUp')
 })
 
-inputFields.forEach((el, i) => el.addEventListener('focus', e => {
-  e.stopPropagation()
-  numpad.classList.remove('hidden')
-  wrap.classList.add('moveUp')
-  inputEventInfo.id = e.target.id;
-  inputEventInfo.index = i
-}))
+// inputFields.forEach((el, i) => el.addEventListener('focus', e => {
+//   e.stopPropagation()
+//   numpad.classList.remove('hidden')
+//   wrap.classList.add('moveUp')
+//   inputEventInfo.id = e.target.id;
+//   inputEventInfo.index = i
+// }))
 
 inputFields.forEach((el, i) => el.addEventListener('click', e => {
   e.stopPropagation()

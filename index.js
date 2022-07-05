@@ -34,6 +34,9 @@ inputFields.forEach((el, i) => el.addEventListener('focus', e => {
 inputFields.forEach(el => el.addEventListener('click', e => {
   e.stopPropagation()
   numpad.classList.remove('hidden')
+  wrap.classList.add('moveUp')
+  inputEventInfo.id = e.target.id;
+  inputEventInfo.index = i
 }))
 
 

@@ -35,3 +35,12 @@ numpad.addEventListener('click', e => e.stopPropagation())
 for (let i = 1; i < 10; i++) numpad.innerHTML += `<p onclick="numberClick(event)">${i}</p>`
 
 numpad.innerHTML += `<p onclick="numberClick(event)">.</p><p onclick="numberClick(event)">0</p><p onclick="numberClick(event)"><</p>`
+
+const buttons = Array.from(document.querySelectorAll('p'));
+
+buttons.forEach(el => el.addEventListener('touchstart', e => {
+  e.target.classList.add('touch')
+}))
+buttons.forEach(el => el.addEventListener('touchend', e => {
+  e.target.classList.remove('touch')
+}))

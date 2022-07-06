@@ -110,10 +110,11 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(to right, #25aae1, #25aae1, #04befe, #04befe);
+  /* background-image: linear-gradient(to right, #25aae1, #25aae1, #04befe, #04befe); */
   box-shadow: 0 4px 15px 0 rgb(45 54 65 / 75%);
 }
 
 .touch {
-  background-color: rgba(0, 0, 0, 0.349);
+  background-image: none;
+  background-color: rgba(0, 0, 0, 0.274);
 }

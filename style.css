@@ -73,10 +73,13 @@ label {
 } */
 
 .clear {
+  border: 1px solid white;
+  color: white;
   padding: 10px;
   cursor: pointer;
   border-radius: 5px;
   font-size: 1.2em;
+  text-align: center;
 }
 
 

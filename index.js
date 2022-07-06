@@ -22,22 +22,6 @@ document.body.addEventListener('click', () => {
   wrap.classList.remove('moveUp')
 })
 
-document.addEventListener('gesturestart', function (e) {
-  e.preventDefault();
-});
-
-numpad.addEventListener('gesturestart', function (e) {
-  e.preventDefault();
-});
-
-document.addEventListener('touchmove', function (event) {
-  event = event.originalEvent || event;
-  if (event.scale > 1) {
-    event.preventDefault();
-  }
-}, false);
-
-
 inputs.forEach((el, i) => el.addEventListener('click', e => {
   e.stopPropagation()
   numpad.classList.remove('hidden')
@@ -51,3 +35,34 @@ numpad.addEventListener('click', e => e.stopPropagation())
 for (let i = 1; i < 10; i++) numpad.innerHTML += `<button onclick="numberClick(event)">${i}</button>`
 
 numpad.innerHTML += `<button onclick="numberClick(event)">.</button><button onclick="numberClick(event)">0</button><button onclick="numberClick(event)"><</button>`
+
+
+let preLastTouchStartAt = 0;
+let lastTouchStartAt = 0;
+const delay = 500;
+const buttons = Array.from(document.querySelectorAll('button'))
+buttons.forEach(el => el.addEventListener('touchstart', () => {
+  preLastTouchStartAt = lastTouchStartAt;
+  lastTouchStartAt = +new Date();
+}))
+
+buttons.forEach(el => el.addEventListener('touchend', (event) => {
+  const touchEndAt = +new Date();
+  if (touchEndAt - preLastTouchStartAt < delay) {
+    event.preventDefault();
+    event.target.click();
+  }
+}))
+
+
+// document.addEventListener('touchstart', () => {
+//   preLastTouchStartAt = lastTouchStartAt;
+//   lastTouchStartAt = +new Date();
+// });
+// document.addEventListener('touchend', (event) => {
+//   const touchEndAt = +new Date();
+//   if (touchEndAt - preLastTouchStartAt < delay) {
+//     event.preventDefault();
+//     event.target.click();
+//   }
+// });

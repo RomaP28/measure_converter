@@ -22,6 +22,11 @@ document.body.addEventListener('click', () => {
   wrap.classList.remove('moveUp')
 })
 
+document.addEventListener('gesturestart', function (e) {
+  e.preventDefault();
+});
+
+
 inputs.forEach((el, i) => el.addEventListener('click', e => {
   e.stopPropagation()
   numpad.classList.remove('hidden')
@@ -34,4 +39,4 @@ numpad.addEventListener('click', e => e.stopPropagation())
 
 for (let i = 1; i < 10; i++) numpad.innerHTML += `<button onclick="numberClick(event)">${i}</button>`
 
-numpad.innerHTML += `<button onclick="numberClick(event)"><</button><button onclick="numberClick(event)">0</button><button onclick="numberClick(event)">.</button>`
+numpad.innerHTML += `<button onclick="numberClick(event)">.</button><button onclick="numberClick(event)">0</button><button onclick="numberClick(event)"><</button>`

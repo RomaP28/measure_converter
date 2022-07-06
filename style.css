@@ -73,13 +73,13 @@ label {
 } */
 
 .clear {
-  /* border: 1px solid white;
-  color: white; */
+  border: 1px solid white;
+  color: white;
   padding: 10px;
   cursor: pointer;
   border-radius: 5px;
   font-size: 1.2em;
-  /* text-align: center; */
+  text-align: center;
 }
 
 
@@ -98,7 +98,7 @@ label {
   transform: translateX(100%);
 }
 
-.numpad button {
+.numpad p {
   cursor: pointer;
   margin: 1px;
   padding: 0;

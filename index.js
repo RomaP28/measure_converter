@@ -32,16 +32,19 @@ inputs.forEach((el, i) => el.addEventListener('click', e => {
 
 numpad.addEventListener('click', e => e.stopPropagation())
 
-for (let i = 1; i < 10; i++) numpad.innerHTML += `<p onclick="numberClick(event)">${i}</p>`
+for (let i = 1; i < 10; i++) numpad.innerHTML += `<p class="default-bg" onclick="numberClick(event)">${i}</p>`
 
-numpad.innerHTML += `<p onclick="numberClick(event)">.</p><p onclick="numberClick(event)">0</p><p onclick="numberClick(event)"><</p>`
+numpad.innerHTML += `<p class="default-bg" onclick="numberClick(event)">.</p>
+<p class="default-bg" onclick="numberClick(event)">0</p>
+<p class="default-bg" onclick="numberClick(event)"><</p>`
 
-const buttons = Array.from(document.querySelectorAll('p'));
-console.log(buttons)
+const buttons = Array.from(document.querySelectorAll('.default-bg'));
 
 buttons.forEach(el => el.addEventListener('touchstart', e => {
-  e.target.classList.add('touch')
+  e.target.classList.add('touch-bg')
+  e.target.classList.remove('default-bg')
 }))
 buttons.forEach(el => el.addEventListener('touchend', e => {
-  e.target.classList.remove('touch')
+  e.target.classList.remove('touch-bg')
+  e.target.classList.add('default-bg')
 }))

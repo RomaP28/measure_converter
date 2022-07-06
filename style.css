@@ -44,6 +44,7 @@ input {
 input:focus {
   border: 1px solid black;
   box-shadow: 0 4px 15px 0 rgb(45 54 65 / 75%);
+  -webkit-appearance: none;
   -webkit-box-shadow: 0 4px 15px 0 rgb(45 54 65 / 75%);
   -moz-box-shadow: 0 4px 15px 0 rgb(45 54 65 / 75%);
 }

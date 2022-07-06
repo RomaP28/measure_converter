@@ -25,13 +25,6 @@ const validate = e => {
   calc(onFocus)
 }
 
-const clearAll = () => { for (const input of inputs) input.value = '0' }
-
-document.body.addEventListener('click', () => {
-  numpad.classList.add('hidden')
-  wrap.classList.remove('moveUp')
-})
-
 inputs.forEach((el, i) => el.addEventListener('click', e => {
   e.stopPropagation()
   numpad.classList.remove('hidden')
@@ -40,8 +33,7 @@ inputs.forEach((el, i) => el.addEventListener('click', e => {
   onFocus.index = i
 }))
 
-
-numpad.addEventListener('click', e => e.stopPropagation())
+const clearAll = () => { for (const input of inputs) input.value = '0' }
 
 const numbersArr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '0', '<']
 for (const val of numbersArr) numpad.innerHTML += `<p class="default-bg" onclick="validate(event)">${val}</p>`
@@ -52,7 +44,23 @@ numbers.forEach(el => el.addEventListener('touchstart', e => {
   e.target.classList.add('touch-bg')
   e.target.classList.remove('default-bg')
 }))
+
 numbers.forEach(el => el.addEventListener('touchend', e => {
   e.target.classList.remove('touch-bg')
   e.target.classList.add('default-bg')
 }))
+
+numpad.addEventListener('click', e => e.stopPropagation())
+
+document.body.addEventListener('click', () => {
+  numpad.classList.add('hidden')
+  wrap.classList.remove('moveUp')
+})
+
+document.querySelector('.clear').addEventListener('touchstart', e => {
+  e.target.classList.add('touch-bg')
+})
+
+document.querySelector('.clear').addEventListener('touchend', e => {
+  e.target.classList.remove('touch-bg')
+})

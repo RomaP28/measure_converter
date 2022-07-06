@@ -26,6 +26,17 @@ document.addEventListener('gesturestart', function (e) {
   e.preventDefault();
 });
 
+numpad.addEventListener('gesturestart', function (e) {
+  e.preventDefault();
+});
+
+document.addEventListener('touchmove', function (event) {
+  event = event.originalEvent || event;
+  if (event.scale > 1) {
+    event.preventDefault();
+  }
+}, false);
+
 
 inputs.forEach((el, i) => el.addEventListener('click', e => {
   e.stopPropagation()

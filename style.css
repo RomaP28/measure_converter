@@ -27,16 +27,22 @@ body {
 }
 
 .moveUp {
-  transform: translateY(-30%);
+  transform: translateY(-40%);
 }
 
 input {
-  padding: 2px;
+  padding-left: 10px;
   border-radius: 5px;
   border: 1px solid lightgray;
   font-size: 2em;
   width: 170px;
   height: 50px;
+  outline: none;
+}
+
+input:focus {
+  border: 1px solid black;
+  box-shadow: 1px 3px 6px rgb(70, 69, 68);
 }
 
 /* input::-webkit-outer-spin-button, */
@@ -52,14 +58,17 @@ label {
   font-size: 1.8em;
 }
 
-button {
+/* .numpad button {
   cursor: pointer;
   border-radius: 5px;
   font-size: 1.2em;
-}
+} */
 
 .clear {
   padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.2em;
 }
 
 
@@ -67,7 +76,7 @@ button {
   position: absolute;
   width: 100%;
   height: 30%;
-  bottom: 10%;
+  bottom: 13%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -76,11 +85,11 @@ button {
 
 .hidden {
   transform: translateX(100%);
-  overflow-y: hidden;
-  overflow-x: hidden;
+  /* overflow-y: hidden;
+  overflow-x: hidden; */
 }
 
-.numpad p {
+.numpad button {
   cursor: pointer;
   margin: 0;
   padding: 0;

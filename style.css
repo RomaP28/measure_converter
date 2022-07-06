@@ -44,6 +44,8 @@ input {
 input:focus {
   border: 1px solid black;
   box-shadow: 0 4px 15px 0 rgb(45 54 65 / 75%);
+  -webkit-box-shadow: 0 4px 15px 0 rgb(45 54 65 / 75%);
+  -moz-box-shadow: 0 4px 15px 0 rgb(45 54 65 / 75%);
 }
 
 /* input::-webkit-outer-spin-button, */
@@ -103,5 +105,3 @@ label {
   background-image: linear-gradient(to right, #25aae1, #25aae1, #04befe, #04befe);
   box-shadow: 0 4px 15px 0 rgb(45 54 65 / 75%);
 }
-
-.numpad button:active {}
